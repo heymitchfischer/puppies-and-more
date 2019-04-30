@@ -42,6 +42,11 @@
               <a class="dropdown-item" href="#">Foster</a>
             </div>
           </li>
+          <% if admin_signed_in? %>
+          <li class="nav-item">
+            <%= link_to("/admins/sign_out", destroy_admin_session_path, method: :delete) %>
+          </li>
+          <% end %>
         </ul>
       </div>
     </nav>
@@ -49,5 +54,7 @@
       <%= flash_messages %>
       <%= yield %>
     </div>
+    <%= flash_messages %>
+    <%= yield %>
   </body>
 </html>
