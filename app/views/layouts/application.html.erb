@@ -11,8 +11,51 @@
   </head>
 
   <body>
-    <h1>Puppies And More</h1>
-    <h1>South Jersey Adoption and Foster Home Network</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info sticky-top">
+      <a class="navbar-brand" href="#">Puppies & More Rescue</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <span class="navbar-text">
+        South Jersey Adoption and Foster Home Network          
+      </span>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">About<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Donate<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Contact Us<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Pets
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Adopt</a>
+              <a class="dropdown-item" href="#">Foster</a>
+            </div>
+          </li>
+          <% if admin_signed_in? %>
+          <li class="nav-item">
+            <%= link_to("/admins/sign_out", destroy_admin_session_path, method: :delete) %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <%= flash_messages %>
+      <%= yield %>
+    </div>
+    <%= flash_messages %>
     <%= yield %>
   </body>
 </html>
