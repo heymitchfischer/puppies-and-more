@@ -20,4 +20,8 @@ class StaticPagesController < ApplicationController
   def donate
     
   end
+
+  def send_message
+    ContactMailer.with(params).contact.deliver_now
+  end
 end
