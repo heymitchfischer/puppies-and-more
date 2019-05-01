@@ -1,0 +1,59 @@
+.header {
+  height: 500px;
+  background-image: url("http://puppiesandmorerescue.org/wp-content/uploads/2017/12/qtq50-1IIFMj.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 0 9999em;
+  color: rgba(245, 245, 245, 0.38);
+}
+
+.header-inner {
+  width: 50%;
+  float: right;
+  padding: 4%;
+}
+
+.header .widget.widget_text p {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    padding: 0;
+    color: black;
+}
+
+
+#footer {
+  padding: 20px 0;
+  text-align: center;
+  color: #999999;
+
+}
+
+.social-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.social-list li {
+  margin: 5px 0;
+  display: inline-block;
+  margin: auto 10px;
+}
+
+.social-list li a {
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background-color: white;
+  border-radius: 100%;
+  display: block;
+  transition-duration: 500ms;
+}
+
+.social-list li a:hover {
+  color: white;
+  background-color: #62b6cb;
+
+  transform: scale(1.3);
+  transition-duration: 500ms;
+}
