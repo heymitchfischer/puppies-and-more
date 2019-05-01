@@ -5,7 +5,9 @@
   <% @animals.each do |animal| %>
     <div class="card col-md-4">
       <div class="card" style="margin: 5px 5px">
-        <%= image_tag(animal["photos"][0]["large"], class: "card-img-top") %> 
+        <div class="text-center">
+          <%= image_tag(animal["photos"][0]["large"], class: "card-img-top") %> 
+        </div>
         <div class="card-body">
           <h5 class="card-title"><%= animal["name"] %></h5>
           <p class="card-text">
@@ -17,6 +19,7 @@
             <br>
             <%= animal["gender"] %>
             </p>
+            <%= link_to("View Petfinder Profile", animal["url"], class: "btn btn-primary") %>
         </div>  
       </div>
     </div>
