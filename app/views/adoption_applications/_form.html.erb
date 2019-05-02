@@ -1,0 +1,483 @@
+<%= form_with(model: adoption_application, local: true) do |form| %>
+  <% if adoption_application.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(adoption_application.errors.count, "error") %> prohibited this adoption_application from being saved:</h2>
+
+      <ul>
+      <% adoption_application.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <p>Thank you for your interest in our dogs. Please fill all fields in completely so that we can best help select
+the right per for you. Remember to save your information in the form prior to submitting your application.
+All information is treated as confidential. Submission of this application does not guarantee that you will receive
+a dog. Applications without addresses and phone numbers will be discarded. Applications could take up to one
+week or more to process. Approved applicants will be contacted by a rescue volunteer.</p>
+
+  <div class="row">
+    <div class="field form-group col-md-4">
+      <%= form.label :name, "Name(s)" %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-8">
+      <%= form.label :address %>
+      <%= form.text_field :address, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-4">
+      <%= form.label :city %>
+      <%= form.text_field :city, class: "form-control" %>
+    </div>
+
+    <div class="field form-group col-md-3">
+      <%= form.label :state %>
+      <%= form.text_field :state, class: "form-control" %>
+    </div>
+
+    <div class="field form-group col-md-2">
+      <%= form.label :zip %>
+      <%= form.text_field :zip, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-3">
+      <%= form.label :cell_phone %>
+      <%= form.text_field :cell_phone, placeholder: "(123) 456-7890", class: "form-control" %>
+    </div>
+
+    <div class="field form-group col-md-3">
+      <%= form.label :work_phone %>
+      <%= form.text_field :work_phone, placeholder: "(123) 456-7890", class: "form-control" %>
+    </div>
+
+    <div class="field form-group col-md-5">
+      <%= form.label :email %>
+      <%= form.text_field :email, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-6">
+      <%= form.label :hear_about, "Where did you hear about Puppies and More Rescue?" %>
+      <%= form.text_area :hear_about, class: "form-control" %>
+    </div>
+
+    <div class="field form-group col-md-2">
+      <%= form.label :own_rent, "Do you own or rent?" %>
+      <%= form.text_field :own_rent, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-5">
+      <%= form.label :current_address_length, "How long have you been at your current address?" %>
+      <%= form.text_field :current_address_length, class: "form-control" %>
+    </div>
+
+    <div class="field form-group col-md-7">
+      <%= form.label :home_type, "Type of home (Single-Family House, Duplex, Apartment, Mobile Home):" %>
+      <%= form.text_field :home_type, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md">
+      <%= form.label :future_move, "Do you have plans of moving within the year?" %>
+      <%= form.radio_button :future_move, '1' %>
+      <%= label :future_move_yes, 'Yes' %>
+      <%= form.radio_button :future_move, '0' %>
+      <%= label :future_move_no, 'No' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md">
+      <%= form.label :lease_permit, "Does your lease permit dogs?" %>
+      <%= form.radio_button :lease_permit, '1' %>
+      <%= label :lease_permit_yes, 'Yes' %>
+      <%= form.radio_button :lease_permit, '0' %>
+      <%= label :lease_permit_no, 'No' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-5">
+      <%= form.label :pet_restrictions, "Are there any breed or size restrictions?" %>
+      <%= form.radio_button :pet_restrictions, '1' %>
+      <%= label :pet_restrictions_yes, 'Yes' %>
+      <%= form.radio_button :pet_restrictions, '0' %>
+      <%= label :pet_restrictions_no, 'No' %>
+    </div>
+
+    <div class="field form-group col-md-7">
+      <%= form.label :pet_restrictions_description, "If yes, explain:" %>
+      <%= form.text_area :pet_restrictions_description, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-3">
+      <%= form.label :landlord_name %>
+      <%= form.text_field :landlord_name, class: "form-control" %>
+    </div>
+
+    <div class="field form-group col-md-3">
+      <%= form.label :landlord_phone %>
+      <%= form.text_field :landlord_phone, placeholder: "(123) 456-7890", class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md">
+      <%= form.label :volunteer_visit, "Will you welcome a Rescue Volunteer to conduct a short home visit?" %>
+      <%= form.radio_button :volunteer_visit, '1' %>
+      <%= label :volunteer_visit_yes, 'Yes' %>
+      <%= form.radio_button :volunteer_visit, '0' %>
+      <%= label :volunteer_visit_no, 'No' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-3">
+      <%= form.label :relationship_status %>
+      <%= form.text_field :relationship_status, placeholder: "Ex: Single, Married, Divorced", class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <p class="col-md">Age(s) of all members of household. Please include genders of children in the home.</p>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-6">
+      <%= form.label :household_adults, "Adults:" %>
+      <%= form.text_field :household_adults, class: "form-control" %>
+    </div>
+
+    <div class="field form-group col-md-6">
+      <%= form.label :household_children, "Children:" %>
+      <%= form.text_field :household_children, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md">
+      <%= form.label :household_other, "List others in the home who may have contact with the dog, and the relationship to you:" %>
+      <%= form.text_area :household_other, class: "form-control col-md-8" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-6">
+      <%= form.label :occupations, "Occupation of head of household and of partner (if applicable):" %>
+      <%= form.text_field :occupations, class: "form-control" %>
+    </div>
+
+    <div class="field form-group col-md-5">
+      <%= form.label :out_of_home_hours, "What are the hours you are typically out of the home?" %>
+      <%= form.text_field :out_of_home_hours, placeholder: "Ex: 8:00am-5:00pm", class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md">
+      <%= form.label :work_from_home, "Does anyone in the household work from home?" %>
+      <%= form.radio_button :work_from_home, '1' %>
+      <%= label :work_from_home_yes, 'Yes' %>
+      <%= form.radio_button :work_from_home, '0' %>
+      <%= label :work_from_home_no, 'No' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md">
+      <%= form.label :why_adopt, "Why are you interested in adopting one of our pets, and what do you hope your new dog will provide for you and/or your family?" %>
+      <%= form.text_area :why_adopt, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-6">
+      <%= form.label :house_training_plan, "What is your plan for house training your dog/puppy?" %>
+      <%= form.text_area :house_training_plan, class: "form-control" %>
+    </div>
+
+    <div class="field form-group col-md-6">
+      <%= form.label :pet_unwanted, "What do you NOT want in the pet that you get?" %>
+      <%= form.text_area :pet_unwanted, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md">
+      <%= form.label :behavior_advice, "If your dog exhibits behavioral or adjustment issues, will you seek advice from the Rescue?" %>
+      <%= form.radio_button :behavior_advice, '1' %>
+      <%= label :behavior_advice_yes, 'Yes' %>
+      <%= form.radio_button :behavior_advice, '0' %>
+      <%= label :behavior_advice_no, 'No' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md">
+      <%= form.label :other_pets, "List all current AND Past dogs, cats and other pets.  Please include the pet's name, breed, sex, age, if it has been neutered/spayed, how long you have owned said pet, and its current health or cause of death if your pet has passed away." %>
+      <%= form.text_area :other_pets, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-4">
+      <%= form.label :pet_gender, "Would you like a pet that is Male or Female?" %>
+      <%= form.text_field :pet_gender, class: "form-control" %>
+    </div>
+
+    <div class="field form-group col-md-4">
+      <%= form.label :pet_size, "What size range (as adult) would you like?" %>
+      <%= form.text_field :pet_size, placeholder: "Ex: Small, Medium, Large", class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <p class="col-md-2">Preferred age range:</p>
+    <div class="field form-group col-md-3">
+      <%= form.label :pet_age_min, "Youngest:" %>
+      <%= form.number_field :pet_age_min, class: "form-control" %>
+    </div>
+
+    <div class="field form-group col-md-3">
+      <%= form.label :pet_age_max, "Oldest:" %>
+      <%= form.number_field :pet_age_max, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md">
+      <%= form.label :lifetime_commitment, "Can you commit to caring for a pet for its lifetime?" %>
+      <%= form.radio_button :lifetime_commitment, '1' %>
+      <%= label :lifetime_commitment_yes, 'Yes' %>
+      <%= form.radio_button :lifetime_commitment, '0' %>
+      <%= label :lifetime_commitment_no, 'No' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-5">
+      <%= form.label :emergency_care, "In an emergency, who will care for your dog?" %>
+      <%= form.text_field :emergency_care, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-6">
+      <%= form.label :day_stay, "Where will your dog stay during the day? Please explain:" %>
+      <%= form.text_area :day_stay, class: "form-control" %>
+    </div>
+
+    <div class="field form-group col-md-6">
+      <%= form.label :night_stay, "Where will your dog stay during the night? Please explain:" %>
+      <%= form.text_area :night_stay, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-4">
+      <%= form.label :fence_type, "Type of fence:" %>
+      <%= form.text_field :fence_type, class: "form-control" %>
+    </div>
+
+    <div class="field form-group col-md-4">
+      <%= form.label :fence_height %>
+      <%= form.text_field :fence_height, class: "form-control" %>
+    </div>
+
+    <div class="field form-group col-md-4">
+      <%= form.label :fence_enclosed, "Is it fully enclosed?" %>
+      <%= form.radio_button :fence_enclosed, '1' %>
+      <%= label :fence_enclosed_yes, 'Yes' %>
+      <%= form.radio_button :fence_enclosed, '0' %>
+      <%= label :fence_enclosed_no, 'No' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md">
+      <%= form.label :pet_typical_day, "Describe a typical day for your dog. How long will your dog be home alone? Consider hours of work, when you leave/return:" %>
+      <%= form.text_area :pet_typical_day, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-6">
+      <%= form.label :vacation_plans, "What will you do with the dog when you go on vacation?" %>
+      <%= form.text_area :vacation_plans, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md">
+      <%= form.label :pet_failure, "Have you ever had a pet for a short period of time where it didn’t work out?" %>
+      <%= form.radio_button :pet_failure, '1' %>
+      <%= label :pet_failure_yes, 'Yes' %>
+      <%= form.radio_button :pet_failure, '0' %>
+      <%= label :pet_failure_no, 'No' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-5">
+      <%= form.label :moving_plan, "If you have to move, what would you do with your pets?" %>
+      <%= form.text_area :moving_plan, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md">
+      <%= form.label :emergency_expense, "Are you willing to pay for emergency veterinary care (if needed) which can result in an expense of $200 to $1,000 or more?" %>
+      <%= form.radio_button :emergency_expense, '1' %>
+      <%= label :emergency_expense_yes, 'Yes' %>
+      <%= form.radio_button :emergency_expense, '0' %>
+      <%= label :emergency_expense_no, 'No' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md">
+      <%= form.label :general_expense, "Are you prepared to pay for pet expenses such as routine and other veterinary care, supplies, toys, pet sitting, grooming, chews, monthly heart guard, flea and tick, etc. ?" %>
+      <%= form.radio_button :general_expense, '1' %>
+      <%= label :general_expense_yes, 'Yes' %>
+      <%= form.radio_button :general_expense, '0' %>
+      <%= label :general_expense_no, 'No' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md">
+      <%= form.label :puppy_class, "Have you ever taken a puppy through puppy class?" %>
+      <%= form.radio_button :puppy_class, '1' %>
+      <%= label :puppy_class_yes, 'Yes' %>
+      <%= form.radio_button :puppy_class, '0' %>
+      <%= label :puppy_class_no, 'No' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md">
+      <%= form.label :obedience_class, "Have you ever taken a dog through obedience class?" %>
+      <%= form.radio_button :obedience_class, '1' %>
+      <%= label :obedience_class_yes, 'Yes' %>
+      <%= form.radio_button :obedience_class, '0' %>
+      <%= label :obedience_class_no, 'No' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-6">
+      <%= form.label :pet_books, "What books have you read on Pet Care or Pet Training?" %>
+      <%= form.text_field :pet_books, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md">
+      <%= form.label :breed_research, "Have you done any breed specific research?" %>
+      <%= form.radio_button :breed_research, '1' %>
+      <%= label :breed_research_yes, 'Yes' %>
+      <%= form.radio_button :breed_research, '0' %>
+      <%= label :breed_research_no, 'No' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md">
+      <%= form.label :obedience_recommend, "If obedience training or puppy classes are recommended for the dog, will you attend?" %>
+      <%= form.radio_button :obedience_recommend, '1' %>
+      <%= label :obedience_recommend_yes, 'Yes' %>
+      <%= form.radio_button :obedience_recommend, '0' %>
+      <%= label :obedience_recommend_no, 'No' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-4">
+      <%= form.label :obedience_recommend_description, "If no, please explain:" %>
+      <%= form.text_area :obedience_recommend_description, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md">
+      <%= form.label :obedience_pay, "Are you will to pay for obedience or behavioral training?" %>
+      <%= form.radio_button :obedience_pay, '1' %>
+      <%= label :obedience_pay_yes, 'Yes' %>
+      <%= form.radio_button :obedience_pay, '0' %>
+      <%= label :obedience_pay_no, 'No' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-5">
+      <%= form.label :current_vet_name, "Your current Veterinarian:" %>
+      <%= form.text_field :current_vet_name, class: "form-control" %>
+    </div>
+
+    <div class="field form-group col-md-3">
+      <%= form.label :current_vet_phone, "Phone:" %>
+      <%= form.text_field :current_vet_phone, placeholder: "(123) 456-7890", class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-5">
+      <%= form.label :past_vet_name, "Your past Veterinarian" %>
+      <%= form.text_field :past_vet_name, class: "form-control" %>
+    </div>
+
+    <div class="field form-group col-md-3">
+      <%= form.label :past_vet_phone, "Phone:" %>
+      <%= form.text_field :past_vet_phone, placeholder: "(123) 456-7890", class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-8">
+      <%= form.label :references, "Please provide 3 non-family personal references with name, relationship and phone number" %>
+      <%= form.text_area :references, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <p class="col-md">If someone outside the home will be assisting with the puppy care, please provide:</p>
+  </div>
+  <div class="row">
+    <div class="field form-group col-md-5">
+      <%= form.label :assisting_name, "Name:" %>
+      <%= form.text_field :assisting_name, class: "form-control" %>
+    </div>
+
+    <div class="field form-group col-md-3">
+      <%= form.label :assisting_phone, "Phone:" %>
+      <%= form.text_field :assisting_phone, placeholder: "(123) 456-7890", class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field form-group col-md-10">
+      <%= form.label :additional_information, "Please provide any additional information, facts or comments, which might aid in picking the right pet for you:" %>
+      <%= form.text_area :additional_information, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
