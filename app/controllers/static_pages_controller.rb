@@ -29,7 +29,5 @@ class StaticPagesController < ApplicationController
   def pets
     response = Petfinder::Client.get_adoptable_animals_by_organization("NJ499")
     @animals = response["animals"]
-    p @animals[0]["breeds"]
-    p @animals[0]["photos"][0]["small"]
   end
 end
