@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :foster_applications
   resources :adoption_applications
   get '/' => 'static_pages#home'
   get '/home' => 'static_pages#home'

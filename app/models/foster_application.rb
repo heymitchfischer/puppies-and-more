@@ -1,0 +1,3 @@
+class FosterApplication < ApplicationRecord
+  
+end
