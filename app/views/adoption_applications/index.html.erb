@@ -1,0 +1,151 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Adoption Applications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Cell phone</th>
+      <th>Work phone</th>
+      <th>Email</th>
+      <th>Hear about</th>
+      <th>Own rent</th>
+      <th>Current address length</th>
+      <th>Future move</th>
+      <th>Home type</th>
+      <th>Lease permit</th>
+      <th>Pet restrictions</th>
+      <th>Pet restrictions description</th>
+      <th>Landlord name</th>
+      <th>Landlord phone</th>
+      <th>Volunteer visit</th>
+      <th>Relationship status</th>
+      <th>Household adults</th>
+      <th>Household children</th>
+      <th>Household other</th>
+      <th>Occupations</th>
+      <th>Out of home hours</th>
+      <th>Work from home</th>
+      <th>Why adopt</th>
+      <th>House training plan</th>
+      <th>Pet unwanted</th>
+      <th>Behavior advice</th>
+      <th>Other pets</th>
+      <th>Pet gender</th>
+      <th>Pet size</th>
+      <th>Pet age min</th>
+      <th>Pet age max</th>
+      <th>Lifetime commitment</th>
+      <th>Emergency care</th>
+      <th>Day stay</th>
+      <th>Night stay</th>
+      <th>Fence type</th>
+      <th>Fence enclosed</th>
+      <th>Fence height</th>
+      <th>Pet typical day</th>
+      <th>Vacation plans</th>
+      <th>Pet failure</th>
+      <th>Moving plan</th>
+      <th>Emergency expense</th>
+      <th>General expense</th>
+      <th>Puppy class</th>
+      <th>Obedience class</th>
+      <th>Pet books</th>
+      <th>Breed research</th>
+      <th>Obedience recommend</th>
+      <th>Obedience recommend description</th>
+      <th>Obedience pay</th>
+      <th>Current vet name</th>
+      <th>Current vet phone</th>
+      <th>Past vet name</th>
+      <th>Past vet phone</th>
+      <th>References</th>
+      <th>Assisting name</th>
+      <th>Assisting phone</th>
+      <th>Additional information</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @adoption_applications.each do |adoption_application| %>
+      <tr>
+        <td><%= adoption_application.name %></td>
+        <td><%= adoption_application.address %></td>
+        <td><%= adoption_application.city %></td>
+        <td><%= adoption_application.state %></td>
+        <td><%= adoption_application.zip %></td>
+        <td><%= adoption_application.cell_phone %></td>
+        <td><%= adoption_application.work_phone %></td>
+        <td><%= adoption_application.email %></td>
+        <td><%= adoption_application.hear_about %></td>
+        <td><%= adoption_application.own_rent %></td>
+        <td><%= adoption_application.current_address_length %></td>
+        <td><%= adoption_application.future_move %></td>
+        <td><%= adoption_application.home_type %></td>
+        <td><%= adoption_application.lease_permit %></td>
+        <td><%= adoption_application.pet_restrictions %></td>
+        <td><%= adoption_application.pet_restrictions_description %></td>
+        <td><%= adoption_application.landlord_name %></td>
+        <td><%= adoption_application.landlord_phone %></td>
+        <td><%= adoption_application.volunteer_visit %></td>
+        <td><%= adoption_application.relationship_status %></td>
+        <td><%= adoption_application.household_adults %></td>
+        <td><%= adoption_application.household_children %></td>
+        <td><%= adoption_application.household_other %></td>
+        <td><%= adoption_application.occupations %></td>
+        <td><%= adoption_application.out_of_home_hours %></td>
+        <td><%= adoption_application.work_from_home %></td>
+        <td><%= adoption_application.why_adopt %></td>
+        <td><%= adoption_application.house_training_plan %></td>
+        <td><%= adoption_application.pet_unwanted %></td>
+        <td><%= adoption_application.behavior_advice %></td>
+        <td><%= adoption_application.other_pets %></td>
+        <td><%= adoption_application.pet_gender %></td>
+        <td><%= adoption_application.pet_size %></td>
+        <td><%= adoption_application.pet_age_min %></td>
+        <td><%= adoption_application.pet_age_max %></td>
+        <td><%= adoption_application.lifetime_commitment %></td>
+        <td><%= adoption_application.emergency_care %></td>
+        <td><%= adoption_application.day_stay %></td>
+        <td><%= adoption_application.night_stay %></td>
+        <td><%= adoption_application.fence_type %></td>
+        <td><%= adoption_application.fence_enclosed %></td>
+        <td><%= adoption_application.fence_height %></td>
+        <td><%= adoption_application.pet_typical_day %></td>
+        <td><%= adoption_application.vacation_plans %></td>
+        <td><%= adoption_application.pet_failure %></td>
+        <td><%= adoption_application.moving_plan %></td>
+        <td><%= adoption_application.emergency_expense %></td>
+        <td><%= adoption_application.general_expense %></td>
+        <td><%= adoption_application.puppy_class %></td>
+        <td><%= adoption_application.obedience_class %></td>
+        <td><%= adoption_application.pet_books %></td>
+        <td><%= adoption_application.breed_research %></td>
+        <td><%= adoption_application.obedience_recommend %></td>
+        <td><%= adoption_application.obedience_recommend_description %></td>
+        <td><%= adoption_application.obedience_pay %></td>
+        <td><%= adoption_application.current_vet_name %></td>
+        <td><%= adoption_application.current_vet_phone %></td>
+        <td><%= adoption_application.past_vet_name %></td>
+        <td><%= adoption_application.past_vet_phone %></td>
+        <td><%= adoption_application.references %></td>
+        <td><%= adoption_application.assisting_name %></td>
+        <td><%= adoption_application.assisting_phone %></td>
+        <td><%= adoption_application.additional_information %></td>
+        <td><%= link_to 'Show', adoption_application %></td>
+        <td><%= link_to 'Edit', edit_adoption_application_path(adoption_application) %></td>
+        <td><%= link_to 'Destroy', adoption_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Adoption Application', new_adoption_application_path %>

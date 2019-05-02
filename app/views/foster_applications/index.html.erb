@@ -1,0 +1,119 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Foster Applications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Cell phone</th>
+      <th>Hear about</th>
+      <th>Why volunteer</th>
+      <th>Phone calls interest</th>
+      <th>Home visits interest</th>
+      <th>App review interest</th>
+      <th>Foster interest</th>
+      <th>Fundraising interest</th>
+      <th>Other interest</th>
+      <th>Pet name</th>
+      <th>Pet type</th>
+      <th>Pet age</th>
+      <th>Pet sex</th>
+      <th>Pet neutered</th>
+      <th>Aggression issues</th>
+      <th>Aggression explanation</th>
+      <th>Vet hospital info</th>
+      <th>References</th>
+      <th>Foster experience</th>
+      <th>Foster experience explanation</th>
+      <th>Family allergies</th>
+      <th>Family allergies explanation</th>
+      <th>Number in home</th>
+      <th>Children in home</th>
+      <th>Children ages</th>
+      <th>Primary caretaker</th>
+      <th>Secondary caretaker</th>
+      <th>Home type</th>
+      <th>Own home</th>
+      <th>Landlord name</th>
+      <th>Landlord phone</th>
+      <th>Pets allowed</th>
+      <th>Fenced yard</th>
+      <th>Where foster kept</th>
+      <th>Where foster sleep</th>
+      <th>Where left alone</th>
+      <th>Family commitment</th>
+      <th>Signature</th>
+      <th>Date</th>
+      <th></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @foster_applications.each do |foster_application| %>
+      <tr>
+        <td><%= foster_application.name %></td>
+        <td><%= foster_application.address %></td>
+        <td><%= foster_application.city %></td>
+        <td><%= foster_application.state %></td>
+        <td><%= foster_application.zip %></td>
+        <td><%= foster_application.email %></td>
+        <td><%= foster_application.phone %></td>
+        <td><%= foster_application.cell_phone %></td>
+        <td><%= foster_application.hear_about %></td>
+        <td><%= foster_application.why_volunteer %></td>
+        <td><%= foster_application.phone_calls_interest %></td>
+        <td><%= foster_application.home_visits_interest %></td>
+        <td><%= foster_application.app_review_interest %></td>
+        <td><%= foster_application.foster_interest %></td>
+        <td><%= foster_application.fundraising_interest %></td>
+        <td><%= foster_application.other_interest %></td>
+        <td><%= foster_application.pet_name %></td>
+        <td><%= foster_application.pet_type %></td>
+        <td><%= foster_application.pet_age %></td>
+        <td><%= foster_application.pet_sex %></td>
+        <td><%= foster_application.pet_neutered %></td>
+        <td><%= foster_application.aggression_issues %></td>
+        <td><%= foster_application.aggression_explanation %></td>
+        <td><%= foster_application.vet_hospital_info %></td>
+        <td><%= foster_application.references %></td>
+        <td><%= foster_application.foster_experience %></td>
+        <td><%= foster_application.foster_experience_explanation %></td>
+        <td><%= foster_application.family_allergies %></td>
+        <td><%= foster_application.family_allergies_explanation %></td>
+        <td><%= foster_application.number_in_home %></td>
+        <td><%= foster_application.children_in_home %></td>
+        <td><%= foster_application.children_ages %></td>
+        <td><%= foster_application.primary_caretaker %></td>
+        <td><%= foster_application.secondary_caretaker %></td>
+        <td><%= foster_application.home_type %></td>
+        <td><%= foster_application.own_home %></td>
+        <td><%= foster_application.landlord_name %></td>
+        <td><%= foster_application.landlord_phone %></td>
+        <td><%= foster_application.pets_allowed %></td>
+        <td><%= foster_application.fenced_yard %></td>
+        <td><%= foster_application.where_foster_kept %></td>
+        <td><%= foster_application.where_foster_sleep %></td>
+        <td><%= foster_application.where_left_alone %></td>
+        <td><%= foster_application.family_commitment %></td>
+        <td><%= foster_application.signature %></td>
+        <td><%= foster_application.date %></td>
+        <td><%= foster_application. %></td>
+        <td><%= link_to 'Show', foster_application %></td>
+        <td><%= link_to 'Edit', edit_foster_application_path(foster_application) %></td>
+        <td><%= link_to 'Destroy', foster_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Foster Application', new_foster_application_path %>

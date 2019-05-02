@@ -1,0 +1,252 @@
+<%= form_with(model: foster_application, local: true) do |form| %>
+  <% if foster_application.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(foster_application.errors.count, "error") %> prohibited this foster_application from being saved:</h2>
+
+      <ul>
+      <% foster_application.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zip %>
+    <%= form.number_field :zip %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cell_phone %>
+    <%= form.text_field :cell_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hear_about %>
+    <%= form.text_area :hear_about %>
+  </div>
+
+  <div class="field">
+    <%= form.label :why_volunteer %>
+    <%= form.text_field :why_volunteer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone_calls_interest %>
+    <%= form.check_box :phone_calls_interest %>
+  </div>
+
+  <div class="field">
+    <%= form.label :home_visits_interest %>
+    <%= form.check_box :home_visits_interest %>
+  </div>
+
+  <div class="field">
+    <%= form.label :app_review_interest %>
+    <%= form.check_box :app_review_interest %>
+  </div>
+
+  <div class="field">
+    <%= form.label :foster_interest %>
+    <%= form.check_box :foster_interest %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fundraising_interest %>
+    <%= form.check_box :fundraising_interest %>
+  </div>
+
+  <div class="field">
+    <%= form.label :other_interest %>
+    <%= form.check_box :other_interest %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pet_name %>
+    <%= form.text_field :pet_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pet_type %>
+    <%= form.text_field :pet_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pet_age %>
+    <%= form.number_field :pet_age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pet_sex %>
+    <%= form.text_field :pet_sex %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pet_neutered %>
+    <%= form.check_box :pet_neutered %>
+  </div>
+
+  <div class="field">
+    <%= form.label :aggression_issues %>
+    <%= form.check_box :aggression_issues %>
+  </div>
+
+  <div class="field">
+    <%= form.label :aggression_explanation %>
+    <%= form.text_area :aggression_explanation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vet_hospital_info %>
+    <%= form.text_area :vet_hospital_info %>
+  </div>
+
+  <div class="field">
+    <%= form.label :references %>
+    <%= form.text_area :references %>
+  </div>
+
+  <div class="field">
+    <%= form.label :foster_experience %>
+    <%= form.check_box :foster_experience %>
+  </div>
+
+  <div class="field">
+    <%= form.label :foster_experience_explanation %>
+    <%= form.text_area :foster_experience_explanation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :family_allergies %>
+    <%= form.check_box :family_allergies %>
+  </div>
+
+  <div class="field">
+    <%= form.label :family_allergies_explanation %>
+    <%= form.text_area :family_allergies_explanation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number_in_home %>
+    <%= form.number_field :number_in_home %>
+  </div>
+
+  <div class="field">
+    <%= form.label :children_in_home %>
+    <%= form.check_box :children_in_home %>
+  </div>
+
+  <div class="field">
+    <%= form.label :children_ages %>
+    <%= form.number_field :children_ages %>
+  </div>
+
+  <div class="field">
+    <%= form.label :primary_caretaker %>
+    <%= form.text_field :primary_caretaker %>
+  </div>
+
+  <div class="field">
+    <%= form.label :secondary_caretaker %>
+    <%= form.text_field :secondary_caretaker %>
+  </div>
+
+  <div class="field">
+    <%= form.label :home_type %>
+    <%= form.text_field :home_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :own_home %>
+    <%= form.check_box :own_home %>
+  </div>
+
+  <div class="field">
+    <%= form.label :landlord_name %>
+    <%= form.text_field :landlord_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :landlord_phone %>
+    <%= form.text_field :landlord_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pets_allowed %>
+    <%= form.text_field :pets_allowed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fenced_yard %>
+    <%= form.check_box :fenced_yard %>
+  </div>
+
+  <div class="field">
+    <%= form.label :where_foster_kept %>
+    <%= form.text_field :where_foster_kept %>
+  </div>
+
+  <div class="field">
+    <%= form.label :where_foster_sleep %>
+    <%= form.text_field :where_foster_sleep %>
+  </div>
+
+  <div class="field">
+    <%= form.label :where_left_alone %>
+    <%= form.text_field :where_left_alone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :family_commitment %>
+    <%= form.check_box :family_commitment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :signature %>
+    <%= form.text_field :signature %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.text_field :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :printed_name %>
+    <%= form.text_field :printed_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
