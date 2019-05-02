@@ -25,6 +25,16 @@
   padding: 4%;
 }
 
+.header .widget {
+  color: black;
+}
+
+.header .widget.widget_title {
+  position: relative;
+  box-sizing: content-box;
+  font-weight: bold;
+}
+
 .header .widget.widget_text p {
   font-size: 1.4rem;
   line-height: 1.4;
