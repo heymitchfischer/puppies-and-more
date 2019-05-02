@@ -1,0 +1,29 @@
+<h1>Our Pets</h1>
+
+
+<div class="row">
+  <% @animals.each do |animal| %>
+    <div class="card col-md-4">
+      <div class="card" style="margin: 5px 5px">
+        <div class="text-center">
+          <%= image_tag(animal["photos"][0]["large"], class: "card-img-top") %> 
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%= animal["name"] %></h5>
+          <p class="card-text">
+            <%= animal["breeds"]["primary"] if animal["breeds"]["primary"] %>
+            <br>
+            <%= animal["breeds"]["secondary"] if animal["breeds"]["secondary"] %>
+            <br>
+            <%= animal["age"] %>
+            <br>
+            <%= animal["gender"] %>
+            </p>
+            <%= link_to("View Petfinder Profile", animal["url"], class: "btn btn-primary") %>
+        </div>  
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
