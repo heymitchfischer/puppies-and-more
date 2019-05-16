@@ -140,3 +140,20 @@
   opacity: 1 !important;
   visibility: visible !important;
 }
+
+#page-title {
+  margin-top: 2rem;
+  border-bottom: 2px solid currentColor;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  line-height: 2;
+}
+
+#page-content {
+  font-family: "Roboto", sans-serif;
+}
+
+#page-ref {
+  font-weight: bold;
+  margin-top: 3rem;
+}
