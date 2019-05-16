@@ -28,6 +28,7 @@ class FosterApplicationsController < ApplicationController
 
     respond_to do |format|
       if @foster_application.save
+        ContactMailer.foster.deliver_now
         format.html { redirect_to @foster_application, notice: 'Foster application was successfully created.' }
         format.json { render :show, status: :created, location: @foster_application }
       else

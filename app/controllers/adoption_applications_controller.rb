@@ -28,6 +28,7 @@ class AdoptionApplicationsController < ApplicationController
 
     respond_to do |format|
       if @adoption_application.save
+        ContactMailer.adopt.deliver_now
         format.html { redirect_to @adoption_application, notice: 'Adoption application was successfully created.' }
         format.json { render :show, status: :created, location: @adoption_application }
       else

@@ -6,4 +6,12 @@ class ContactMailer < ApplicationMailer
     @content = params[:content]
     mail(to: "mitchfischer6@gmail.com", subject: "Message from your website")
   end
+
+  def adopt
+    mail(to: "mitchfischer6@gmail.com")
+  end
+
+  def foster
+
+  end
 end
